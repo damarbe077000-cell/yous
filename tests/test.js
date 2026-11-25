@@ -1,0 +1,13 @@
+const L=require('../js/logic.js'),a=require('assert');
+a(L.overlaps({day:1,start:'08:00',end:'10:00'},{day:1,start:'09:00',end:'11:00'}));
+a(!L.overlaps({day:1,start:'08:00',end:'09:00'},{day:1,start:'09:00',end:'10:00'}));
+a(!L.overlaps({day:1,start:'08:00',end:'10:00'},{day:2,start:'08:00',end:'10:00'}));
+a.strictEqual(L.gpa([{grade:'80',units:'3'},{grade:'60',units:'1'},{grade:'',units:'3'}]),75);
+a.strictEqual(L.needed(40,50,70),60);
+a.strictEqual(L.daysLeft('2026-11-30',new Date('2026-11-25')),5);
+a.strictEqual(L.conv('255',10,16),'FF');a.strictEqual(L.conv('1010',2,10),'10');a.strictEqual(L.conv('xyz',10,2),null);
+console.log('كل الاختبارات نجحت');
+a(L.localCards('TCP: بروتوكول نقل موثوق').includes('س: ما هو TCP؟'));
+a(L.localBlanks('الشبكة الحاسوبية تربط الأجهزة ببعضها.').includes('____'));
+a.strictEqual(L.streak(['2026-11-24','2026-11-25','2026-11-22'],new Date('2026-11-25T12:00:00')),2);
+console.log('اختبارات الدفعة 2 نجحت');
